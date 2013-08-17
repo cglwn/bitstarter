@@ -55,9 +55,6 @@ var checkURL = function(URL, checksfile) {
 }
 
 var checkValid = function($, checksfile){
-    console.log("BEGIN HTML");
-    console.log($("html").html());
-    console.log("END HTML")
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
@@ -73,6 +70,7 @@ var clone = function(fn) {
 
 var printGrader = function(json) {
     outJson = JSON.stringify(json, null, 4);
+    //fs.writeFileSync("./out.json", outJson); Write to file
     console.log(outJson);
 }
 if(require.main == module) {
